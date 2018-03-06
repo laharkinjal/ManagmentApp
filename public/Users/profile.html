@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive admin dashboard and web application ui kit. Theadmin provides several form control styles and layout options for creating a wide variety of forms.">
+    <meta name="keywords" content="form, layout">
+
+<title>User Profile</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="../assets/css/core.min.css" rel="stylesheet">
+    <link href="../assets/css/app.min.css" rel="stylesheet">
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+    <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-dots">
+            <span class="dot1"></span>
+            <span class="dot2"></span>
+            <span class="dot3"></span>
+        </div>
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+        <header class="sidebar-header">
+            <span class="logo">
+                <a href="./index.html">
+                    <span class="ion-at"></span>
+                </a>
+            </span>
+            <span class="sidebar-toggle-fold"></span>
+        </header>
+
+        <nav class="sidebar-navigation">
+            <ul class="menu">
+
+                <li class="menu-item ">
+                    <a class="menu-link" href="./index.html">
+                        <span class="icon fa fa-home"></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item active">
+                    <a class="menu-link" href="./Contracts.html">
+                        <span class="icon fa fa-file-text-o"></span>
+                        <span class="title">Contracts</span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="./Accounts.html">
+                        <span class="icon fa fa-file-text-o"></span>
+                        <span class="title">Accounts</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </aside>
+    <!-- END Sidebar -->
+
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="topbar-btn sidebar-toggler">
+                <i>&#9776;</i>
+            </span>
+        </div>
+
+        <div class="topbar-right">
+            <ul class="topbar-btns">
+                <li class="dropdown d-none d-md-block">
+                    <span class="topbar-btn has-new" data-toggle="dropdown">
+                        <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+                    </span>
+                    <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+                        <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+                            <a class="media" href="./profile.html">
+                                <span class="avatar bg-success">
+                                    <i class="ti-user"></i>
+                                </span>
+                                <div class="media-body">
+                                    <p>
+                                        <b>Profile</b>
+                                    </p>
+                                </div>
+                            </a>
+                            <a class="media" href="#">
+                                <span class="avatar bg-info">
+                                    <i class="	fa fa-gears"></i>
+                                </span>
+                                <div class="media-body">
+                                    <p>
+                                        <b>Settings</b>
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a class="media" href="#">
+                                <span class="avatar bg-warning">
+                                    <i class="ti-face-sad"></i>
+                                </span>
+                                <div class="media-body">
+                                    <p>
+                                        <b>Referral</b>
+                                    </p>
+                                </div>
+                            </a>
+
+                           <a class="media" onclick="logout();">
+                                <span class="avatar bg-primary">
+                                    <i class="fa fa-stop-circle-o"></i>
+                                </span>
+                                <div class="media-body">
+                                    <p>
+                                        <b>Logout</b>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+    <!-- END Topbar -->
+
+
+    <!-- Main container -->
+    <main>
+
+        <div class="main-content">
+            <div class="row">
+                <div class="col-md-12 col-md-offset-4">
+                    <form class="card">
+
+                        <div class="card-body row">
+
+                            <div class="form-group col-md-6">
+
+                                <label>First name</label>
+                                <input class="form-control" type="text" id="firstName" name="firstName">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>last name</label>
+                                <input class="form-control" type="text" id="lastName" name="lastName">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Email</label>
+                                <input class="form-control" type="text" id="email" name="email" disabled>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Company</label>
+                                <input class="form-control" type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Group</label>
+                                <input class="form-control" type="text" id="group" name="group">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>Job Title</label>
+                                <input class="form-control" type="text" id="jobTitle" name="jobTitle">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>phone</label>
+                                <input class="form-control" type="text" id="phone" name="phone">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Address</label>
+                                <input class="form-control" type="text" id="address" name="address">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input-help-hover">city</label>
+                                <select class="input-tag form-control" name="city" id="city">
+                                    <option value="Surat">Surat</option>
+                                    <option value="Ahemedabad">Ahemedabad</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="input-help-hover">State</label>
+                                <select class="input-tag form-control" name="state" id="state">
+                                    <option value="Surat">Surat</option>
+                                    <option value="Ahemedabad">Ahemedabad</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+
+                                <hr class="d-md-none">
+                                <p>Fill</p>
+                                <div class="form-group form-type-fill file-group">
+                                    <input class="form-control file-value file-browser" placeholder="Choose file..." readonly="" type="text">
+                                    <input multiple="" type="file">
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Zip Code</label>
+                                <input class="form-control" type="text" id="zipCode" name="zipCode">
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <h6 class="text-uppercase mt-3" style="text-align: center">Account information</h6>
+                                <hr class="hr-sm mb-2">
+                                <label>Old Password</label>
+                                <input class="form-control" type="password" id="Oldupassword" , name="Oldupassword">
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>Password</label>
+                                <input class="form-control" type="password" id="upassword" , name="upassword" hidden>
+                                <input class="form-control" type="password" id="password" , name="password">
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label>Confirm password</label>
+                                <input type="hidden" id="active" name="active">
+                                <input class="form-control" type="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-secondary" type="reset">Cancel</button>
+                            <button class="btn btn-primary" type="submit" onclick="return UpdateUser();">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <!--/.main-content -->
+
+
+        <!-- Footer -->
+        <footer class="site-footer">
+
+        </footer>
+        <!-- END Footer -->
+
+    </main>
+    <!-- END Main container -->
+
+
+
+    <!-- Global quickview -->
+    <div id="qv-global" class="quickview" data-url="../assets/data/quickview-global.html">
+        <div class="spinner-linear">
+            <div class="line"></div>
+        </div>
+    </div>
+    <!-- END Global quickview -->
+
+
+
+    <!-- Scripts -->
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/jquery.toaster.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            LoadUserdata();
+            $.fn.serializeObject = function () {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function () {
+                    if (o[this.name]) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+        });
+
+        function LoadUserdata() {
+            var id = localStorage.getItem("UserId");
+            $.ajax({
+                type: "GET",
+                url: localStorage.getItem("HostUrl") + "getUserParticularUser?id=" + id,
+
+                success: function (data) {
+
+                    var lstClients = jQuery.parseJSON(data.data);
+
+                    $("#firstName").val(lstClients.firstName);
+                    $("#lastName").val(lstClients.lastName);
+                    $("#company").val(lstClients.company);
+                    $("#jobTitle").val(lstClients.jobTitle);
+                    $("#group").val(lstClients.group);
+                    $("#active").val(lstClients.active);
+                    $("#upassword").val(lstClients.upassword);
+                    $("#address").val(lstClients.address);
+                    $("#city").val(lstClients.city);
+                    $("#state").val(lstClients.state);
+                    $("#zipCode").val(lstClients.zipCode);
+                    $("#phone").val(lstClients.phone);
+                    $("#email").val(lstClients.email);
+                }
+                ,
+                error: function (data) {
+                    if (data.responseJSON.data = "Login") {
+
+                        window.location.href = './../login.html';
+                    }
+                }
+            });
+
+        };
+
+        function UpdateUser() {
+
+            if ($("#upassword").val() != $("#Oldupassword").val()) {
+                app.toast('Old Password did not match', {
+                    actionTitle: 'Error',
+                    actionUrl: '',
+                    actionColor: 'danger'
+                });
+                return false;
+            }
+            var Userinf = {};
+
+            $.ajax({
+                type: "POST",
+                url: localStorage.getItem("HostUrl") + "EditClient",
+                data: {
+                    'state': $("#state").val(),
+                    'upassword': $("#password").val(),
+                    'email': $("#email").val(),
+                    'lastName': $("#lastName").val(),
+                    'firstName': $("#firstName").val(),
+
+                    'city': $("#city").val(),
+                    'company': $("#company").val(),
+                    'group': $("#group").val(),
+                    'utype': 'admin',
+                    'phone': $("#phone").val(),
+
+                    'address': $("#address").val(),
+                    'zipCode': $("#zipCode").val(),
+                    'jobTitle': $("#jobTitle").val(),
+                    'active': 'No'
+                },
+                success: function (data) {
+
+                    if (data.status == 'success') {
+                        LoadUserdata();
+                        app.toast(data.message, {
+                            actionTitle: 'success',
+                            actionUrl: '',
+                            actionColor: 'success'
+                        });
+                    }
+                    else {
+                        return false;
+                        app.toast(data.message, {
+                            actionTitle: 'Error',
+                            actionUrl: '',
+                            actionColor: 'danger'
+                        });
+                    }
+                },
+                error: function (data) {
+                    if (data.responseJSON.data = "Login") {
+
+                        window.location.href = './../login.html';
+                    }
+                }
+            });
+        }
+
+function logout(){
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "logout",
+          success: function (data) {
+            localStorage.clear();
+      localStorage.removeItem("UserId");
+            window.location.href = './../login.html';
+          }
+        });
+      }
+    </script>
+</body>
+
+</html>

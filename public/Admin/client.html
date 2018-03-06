@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+  <meta name="keywords" content="blank, starter">
+
+  <title>Client</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/core.min.css" rel="stylesheet">
+  <link href="../assets/css/app.min.css" rel="stylesheet">
+  <link href="../assets/css/style.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/modal.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-dots">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+    </div>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+    <header class="sidebar-header">
+      <span class="logo">
+        <a href="./index.html">
+          <span class="ion-at"></span>
+        </a>
+      </span>
+      <span class="sidebar-toggle-fold"></span>
+    </header>
+
+    <nav class="sidebar-navigation">
+      <ul class="menu">
+
+        <li class="menu-item ">
+          <a class="menu-link" href="./index.html">
+            <span class="icon fa fa-home"></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./activity.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Activity</span>
+          </a>
+        </li>
+
+
+        <li class="menu-item active">
+          <a class="menu-link" href="./client.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Clients</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Contracts.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Contracts</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Account.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Account</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </aside>
+  <!-- END Sidebar -->
+
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-btn sidebar-toggler">
+        <i>&#9776;</i>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <ul class="topbar-btns">
+
+        <li class="dropdown d-none d-md-block">
+          <span class="topbar-btn has-new" data-toggle="dropdown">
+            <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+          </span>
+          <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+            <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+              <a class="media" href="./profile.html">
+                <span class="avatar bg-success">
+                  <i class="ti-user"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Profile</b>
+                  </p>
+                </div>
+              </a>
+              <a class="media" href="#">
+                <span class="avatar bg-info">
+                  <i class="	fa fa-gears"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Settings</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" href="#">
+                <span class="avatar bg-warning">
+                  <i class="ti-face-sad"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Referral</b>
+                  </p>
+                </div>
+              </a>
+
+             <a class="media" onclick="logout();">
+                <span class="avatar bg-primary">
+                  <i class="fa fa-stop-circle-o"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Logout</b>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </header>
+  <!-- END Topbar -->
+
+
+  <!-- Main container -->
+  <main>
+    <div class="main-content">
+      <div class="row" id="loadCLientData">
+
+      </div>
+    </div>
+    <!--/.main-content -->
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-center text-md-left">Copyright © 2018. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+  </main>
+
+
+  <!-- Global quickview -->
+  <div id="qv-global" class="quickview" data-url="../assets/data/quickview-global.html">
+    <div class="spinner-linear">
+      <div class="line"></div>
+    </div>
+  </div>
+  <!-- END Global quickview -->
+  <div id="GooleModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+          <form class="frmAddClient">
+            <div class="col-md-12 Bg-white padding-0">
+              <div class="col-md-12">
+                <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <h4 class="card-title">
+                      <strong>Add Client</strong>
+                    </h4>
+                    <div class="card-body">
+                      <div class="row" style="margin-right: -64px !important;">
+
+                        <div class="col-md-12 text-center" style="padding-bottom: 30px;">
+                          <img class="avatar img-icon" src="./../assets/img/avatar/1.jpg" alt="...">
+                          </span>
+                          <br/>
+
+                        </div>
+                        <br/>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="input-normal">First Name</label>
+                            <input type="text" class="input-tag form-control" name="firstName">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="input-tag form-control" name="lastName">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="input-help-text">Company/Organization</label>
+                            <input type="text" class="input-tag form-control" name="company">
+
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Job Title</label>
+                            <input type="text" class="input-tag form-control" name="jobTitle">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Group</label>
+                            <input type="text" class="input-tag form-control" name="group">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Active</label>
+                            <select class="input-tag form-control" name="active">
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Address</label>
+                            <input type="text" class="input-tag form-control" name="address">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">city</label>
+                            <input type="text" class="input-tag form-control" name="city">
+                            <!-- <select class="input-tag form-control" name="city">
+                              <option value="Surat">Surat</option>
+                              <option value="Ahemedabad">Ahemedabad</option>
+                            </select> -->
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">State</label>
+                            <input type="text" class="input-tag form-control" name="state">
+                            <!-- <select class="input-tag form-control" name="state">
+                              <option value="Surat">Surat</option>
+                              <option value="Ahemedabad">Ahemedabad</option>
+                            </select> -->
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Zip Code</label>
+                            <input type="text" class="input-tag form-control" name="zipCode">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Phone</label>
+                            <input type="text" class="input-tag form-control" name="phone" placeholder="Phone">
+
+                          </div>
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Email</label>
+                            <input type="text" class="input-tag form-control" name="email" placeholder="Email" required>
+                            <input type="text" class="hidden" value="12345" name="upassword" style="display :none">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                        <!-- <div class="col-md-6">
+                                                
+                                                 <div class="form-group has-form-text">
+                                                   <label for="input-help-hover">Search</label>
+                                                   <input type="text" class="input-tag form-control  border-none" id="input-help-hover" >
+                                                 
+                                                 </div>
+                                               </div> -->
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text" style="float: right">
+
+                            <button class="btn button-update" type="submit">Save </button>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="EditClient" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+          <form class="frmEditClient">
+            <div class="col-md-12 Bg-white padding-0">
+              <div class="col-md-12">
+                <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <h4 class="card-title">
+                      <strong>Edit Client</strong>
+                    </h4>
+                    <div class="card-body">
+                      <div class="row" style="margin-right: -64px !important;">
+
+                        <div class="col-md-12 text-center" style="padding-bottom: 30px;">
+                          <img class="avatar img-icon" src="./../assets/img/avatar/1.jpg" alt="...">
+                          </span>
+                          <br/>
+
+                        </div>
+                        <br/>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="input-normal">First Name</label>
+                            <input type="text" class="input-tag form-control" id="firstName" name="firstName">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="input-tag form-control" id="lastName" name="lastName">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-group">
+                            <label for="input-help-text">Company/Organization</label>
+                            <input type="text" class="input-tag form-control" id="company" name="company">
+
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Job Title</label>
+                            <input type="text" class="input-tag form-control" id="jobTitle" name="jobTitle">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Group</label>
+                            <input type="text" class="input-tag form-control" id="group" name="group">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Active</label>
+                            <select class="input-tag form-control" id="active" name="active">
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Address</label>
+                            <input type="text" class="input-tag form-control" id="address" name="address">
+
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">city</label>
+                            <input type="text" class="input-tag form-control" id="city" name="city">
+
+                            <!-- <select class="input-tag form-control" name="city" id="city">
+                              <option value="Surat">Surat</option>
+                              <option value="Ahemedabad">Ahemedabad</option>
+                            </select> -->
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">State</label>
+                            <input type="text" class="input-tag form-control" id="state" name="state">
+
+                            <!-- <select class="input-tag form-control" name="state" id="state">
+                              <option value="Surat">Surat</option>
+                              <option value="Ahemedabad">Ahemedabad</option>
+                            </select> -->
+
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Zip Code</label>
+                            <input type="text" class="input-tag form-control" id="zipCode" name="zipCode">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Phone</label>
+                            <input type="text" class="input-tag form-control" id="phone" name="phone" placeholder="Phone">
+
+                          </div>
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover">Email</label>
+                            <input type="text" class="input-tag form-control" id="email" name="email" placeholder="Email" disabled>
+                            <input type="text" class="hidden" value="12345" name="upassword" style="display :none">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                        <!-- <div class="col-md-6">
+                                                  
+                                                   <div class="form-group has-form-text">
+                                                     <label for="input-help-hover">Search</label>
+                                                     <input type="text" class="input-tag form-control  border-none" id="input-help-hover" >
+                                                   
+                                                   </div>
+                                                 </div> -->
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text" style="float: right">
+
+                            <button class="btn button-update" type="submit">Update </button>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="fab fab-fixed">
+    <a class="btn btn-float btn-primary" href="#qv-user-add" title="New Client" data-provide="tooltip" data-toggle="modal" data-target="#GooleModel">
+      <i class="ti-plus"></i>
+    </a>
+  </div>
+  <!-- Scripts -->
+  <script src="../assets/js/core.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/js/script.min.js"></script>
+  <script src="../assets/js/jquery.toaster.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $(".modal").on("hidden.bs.modal", function () {
+        $("input").val("");
+      });
+
+      LoadClientdata();
+      $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+
+    });
+
+    function LoadClientdata() {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "get_All_CLeint",
+
+        success: function (data) {
+
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+
+          var lstClients = jQuery.parseJSON(data.data);
+          var count = 0;
+          $.each(lstClients, function (key, value) {
+            var quotient = Math.floor(count / 4);
+
+            var html = '';
+            if (quotient == 1) {
+
+              html += '<div class="" style="margin-top:20px"></div>';
+            }
+            html += '<div class="col-md-3" style="margin-top:20px" >';
+            html += '<div class="col-md-12">';
+            html += '<div class="col-md-12 Bg-white padding-whitebox" id="' + key + '" onclick="EditPopupOpen(\'' + key + '\');">';
+            html += '<div class="">';
+            if (value[0]["active"] == "Yes") {
+              html += ' <span class="icone-star1">';
+            }
+            else {
+              html += ' <span class="icone-star">';
+            }
+            html += '<span class="fa fa-star"></span>';
+            html += '</span>';
+            html += '<span class="icone-ecllipe">';
+            //  html +='<div class="dropdown"> <a class="text-lighter" href="#" data-toggle="dropdown"><i class="ti-more-alt rotate-90"></i></a> <div class="dropdown-menu dropdown-menu-left"><a class="dropdown-item" href="#"><i class="fa fa-fw fa-phone"></i> Call</a><a class="dropdown-item" href="#"><i class="fa fa-fw fa-commenting"></i> Message</a> <a class="dropdown-item" href="#"><i class="fa fa-fw fa-envelope"></i> Email</a><div class="dropdown-divider"></div> <a class="dropdown-item" href="#"><i class="fa fa-fw fa-trash"></i> Delete</a> </div> </div> </div>'
+
+            html += '<span class=" fa fa-ellipsis-v"></span>';
+            html += '</span>';
+            html += ' </div>';
+            html += '<div class="row img-padding">';
+            html += ' <img class="avatar img-icon" src="./../assets/img/avatar/1.jpg" alt="...">';
+            html += '</span>';
+            html += '</div>';
+            html += ' <div class="col-md-12 text-center">';
+            html += '<label class="font-blog">' + value[0]["firstName"] + value[0]["lastName"] + '</label>';
+            html += ' </div>';
+            html += '<div class="col-md-12 text-center">';
+            html += ' <span class="google-text">' + value[0]["company"] + '</span>';
+            html += '</div>';
+            html += '<div class="col-md-12 text-center">';
+            html += '<span class="span-text">' + value[0]["group"] + '</span>';
+            html += ' </div>';
+            html += ' </div>';
+            html += ' </div>';
+            html += ' </div>';
+
+            $("#loadCLientData").append(html);
+            count++;
+          });
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+    }
+
+    function EditPopupOpen(id) {
+
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "getClientById?id=" + id,
+        success: function (data) {
+
+          if (data.status == 'success') {
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+            var lstClients = jQuery.parseJSON(data.data);
+
+            $("#firstName").val(lstClients.firstName);
+            $("#lastName").val(lstClients.lastName);
+            $("#company").val(lstClients.company);
+            $("#jobTitle").val(lstClients.jobTitle);
+            $("#group").val(lstClients.group);
+            if (lstClients.active == "Yes") {
+              $("#active").val("Yes");
+            }
+            else {
+              $("#active").val("No");
+            }
+
+            $("#address").val(lstClients.address);
+            $("#city").val(lstClients.city);
+            $("#state").val(lstClients.state);
+            $("#zipCode").val(lstClients.zipCode);
+            $("#phone").val(lstClients.phone);
+            $("#email").val(lstClients.email);
+            //  $("#id").val(lstClients.key);
+
+            $('#EditClient').modal('show');
+          }
+          else {
+            app.toast(data.message, {
+              actionTitle: 'Error',
+              actionUrl: '',
+              actionColor: 'danger'
+            });
+          }
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+    }
+
+    $(function () {
+      $('form.frmAddClient').on('submit', function (e) {
+        e.preventDefault();
+
+        var ClientData = $(this).serializeObject();
+        if (ClientData.active == "Yes") {
+          ClientData.utype = "user";
+        }
+        else {
+          ClientData.utype = "user";
+        }
+
+        $.ajax({
+          type: "POST",
+          url: localStorage.getItem("HostUrl") + "AddClients",
+          data: ClientData,
+          success: function (data) {
+
+            if (data.status == 'success') {
+              $("#GooleModel").modal('hide');
+              $("#loadCLientData").html('');
+              app.toast(data.message, {
+                actionTitle: 'success',
+                actionUrl: '',
+                actionColor: 'success'
+              });
+              LoadClientdata();
+            }
+            else {
+              app.toast(data.message, {
+                actionTitle: 'Error',
+                actionUrl: '',
+                actionColor: 'danger'
+              });
+            }
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.location.href = './../login.html';
+            }
+          }
+        });
+      });
+
+    });
+
+    $(function () {
+      $('form.frmEditClient').on('submit', function (e) {
+        e.preventDefault();
+
+        var ClientData = $(this).serializeObject();
+        if (ClientData.active == "Yes") {
+          ClientData.utype = "user";
+        }
+        else {
+          ClientData.utype = "user";
+        }
+
+        ClientData.email = $("#email").val();
+
+        $.ajax({
+          type: "POST",
+          url: localStorage.getItem("HostUrl") + "EditClient",
+          data: ClientData,
+          success: function (data) {
+
+            if (data.status == 'success') {
+              $("#loadCLientData").html('');
+
+              app.toast(data.message, {
+                actionTitle: 'success',
+                actionUrl: '',
+                actionColor: 'success'
+              });
+              $('#EditClient').modal('hide');
+              LoadClientdata();
+            }
+            else {
+              app.toast(data.message, {
+                actionTitle: 'Error',
+                actionUrl: '',
+                actionColor: 'danger'
+              });
+            }
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.location.href = './../login.html';
+            }
+          }
+        });
+      });
+
+    });
+
+    function logout(){
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "logout",
+          success: function (data) {
+            localStorage.clear();
+      localStorage.removeItem("UserId");
+            window.location.href = './../login.html';
+          }
+        });
+      }
+  </script>
+
+</body>
+
+</html>

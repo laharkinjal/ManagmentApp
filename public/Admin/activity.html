@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+  <meta name="keywords" content="blank, starter">
+
+  <title>Activity</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/core.min.css" rel="stylesheet">
+  <link href="../assets/css/app.min.css" rel="stylesheet">
+  <link href="../assets/css/style.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/modal.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-dots">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+    </div>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+    <header class="sidebar-header">
+      <span class="logo">
+        <a href="./index.html">
+          <span class="ion-at"></span>
+        </a>
+      </span>
+      <span class="sidebar-toggle-fold"></span>
+    </header>
+
+    <nav class="sidebar-navigation">
+      <ul class="menu">
+
+        <li class="menu-item ">
+          <a class="menu-link" href="./index.html">
+            <span class="icon fa fa-home"></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-item active">
+          <a class="menu-link" href="./activity.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Activity</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./client.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Clients</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Contracts.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Contracts</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Account.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Account</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </aside>
+  <!-- END Sidebar -->
+
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-btn sidebar-toggler">
+        <i>&#9776;</i>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <ul class="topbar-btns">
+
+        <li class="dropdown d-none d-md-block">
+          <span class="topbar-btn has-new" data-toggle="dropdown">
+            <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+          </span>
+          <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+            <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+              <a class="media" href="./profile.html">
+                <span class="avatar bg-success">
+                  <i class="ti-user"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Profile</b>
+                  </p>
+                </div>
+              </a>
+              <a class="media" href="#">
+                <span class="avatar bg-info">
+                  <i class="	fa fa-gears"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Settings</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" href="#">
+                <span class="avatar bg-warning">
+                  <i class="ti-face-sad"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Referral</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" onclick="logout();">
+                <span class="avatar bg-primary">
+                  <i class="fa fa-stop-circle-o"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Logout</b>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </header>
+  <!-- END Topbar -->
+
+  <!-- Main container -->
+  <main>
+
+    <div class="media-list media-list-divided media-list-hover" data-provide="selectall">
+
+      <header class="flexbox align-items-center media-list-header bg-transparent b-0 py-16 pl-20">
+
+        <div>
+          <div class="lookup lookup-circle lookup-right">
+            <!-- <input type="text" data-provide="media-search"> -->
+            <input type="text" onkeyup="searchTitle(this.value);">
+          </div>
+        </div>
+      </header>
+
+
+      <div class="media-list-body bg-white b-1" id="lstActivitys">
+
+      </div>
+
+
+      <div class="fab fab-fixed">
+        <a class="btn btn-float btn-primary" href="#qv-user-add" title="New Client" data-provide="tooltip" data-toggle="modal" data-target="#activityModel">
+          <i class="ti-plus"></i>
+        </a>
+      </div>
+
+    </div>
+
+
+
+  </main>
+  <!-- END Main container -->
+
+
+
+  <div id="activityModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+
+          <from class="frmAddActivity">
+            <div class="col-md-12 Bg-white padding-0">
+              <div class="col-md-12">
+                <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+
+                    <div class="card-body">
+                      <div class="row" style="margin-right: -64px !important;">
+                        <div class="col-md-12">
+                          <h4 class=" actity-text">
+                            <strong>Activity</strong>
+                          </h4>
+                        </div>
+
+                        <label class="container" style="margin-left:5%">
+                          <input type="radio" name="ActivityStatus" value="offblue">
+                          <span class="checkmark offblue" style="box-shadow: 0 0 0 2px rgb(193, 192, 255);"></span>
+                        </label>
+                        <label class="container" style="margin-left:15%">
+                          <input type="radio" name="ActivityStatus" value="oranged">
+                          <span class="checkmark orangered" style="box-shadow: 0 0 0 2px orangered; margin-top: -3%"></span>
+                        </label>
+                        <label class="container" style="margin-left:25%">
+                          <input type="radio" name="ActivityStatus" value="red">
+                          <span class="checkmark red" style="box-shadow: 0 0 0 2px red; margin-top:-7%"></span>
+                        </label>
+
+
+                        <div class="col-md-8">
+                          <br/>
+                          <div class="form-group">
+                            <label for="input-normal update-lable-font">Client</label>
+                            <select class="input-tag form-control required" id="clientName" name="clientName">
+                              <!-- <option value="" disabled="disabled">--Select Client--</option> -->
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                        </div>
+
+
+                        <div class="col-md-7">
+
+                          <div class="form-group">
+                            <label for="input-help-text update-lable-font">Tiltle</label>
+                            <input type="text" class="input-tag form-control txtinput" id="title" name="title">
+
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-5">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font">Date</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control txtinput" id="date" name="date" data-provide="datepicker">
+                              <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font">Group</label>
+
+                            <textarea rows="5" class="input-tag form-control txtinput" id="group" name="group" placeholder="What new with this Project ?"></textarea>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text" style="float: right">
+
+                            <button class="btn button-update" onclick="AddActivity();" type="submit">Save </button>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </form>
+        </div>
+        </from>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div id="EditactivityModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+
+          <from class="frmEditActivity">
+            <div class="col-md-12 Bg-white padding-0">
+              <div class="col-md-12">
+                <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+
+                    <div class="card-body">
+                      <div class="row" style="margin-right: -64px !important;">
+                        <div class="col-md-12">
+                          <h4 class=" actity-text">
+                            <strong>Activity</strong>
+                          </h4>
+                        </div>
+
+                        <label class="container" style="margin-left:5%">
+                          <input type="radio" name="EditActivityStatus" value="offblue">
+                          <span class="checkmark offblue" style="box-shadow: 0 0 0 2px rgb(193, 192, 255);"></span>
+                        </label>
+                        <label class="container" style="margin-left:15%">
+                          <input type="radio" name="EditActivityStatus" value="oranged">
+                          <span class="checkmark orangered" style="box-shadow: 0 0 0 2px orangered; margin-top: -3%"></span>
+                        </label>
+                        <label class="container" style="margin-left:25%">
+                          <input type="radio" name="EditActivityStatus" value="red">
+                          <span class="checkmark red" style="box-shadow: 0 0 0 2px red; margin-top:-7%"></span>
+                        </label>
+
+
+                        <div class="col-md-8">
+                          <br/>
+                          <div class="form-group">
+                            <label for="input-normal update-lable-font">Client</label>
+                            <select class="input-tag form-control" id="EditclientName" name="EditclientName" required>
+                              <option value="">--Select Client--</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-4">
+
+                        </div>
+
+
+                        <div class="col-md-7">
+
+                          <div class="form-group">
+
+                            <label for="input-help-text update-lable-font">Tiltle</label>
+                            <input type="text" class="input-tag form-control" id="EditTitle" name="EditTitle">
+
+                            <input type="text" class="input-tag form-control" id="Id" name="Id" style="display :none">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-5">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font">Date</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control" id="EditDate" name="EditDate" data-provide="datepicker" required>
+                              <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font">Group</label>
+
+                            <textarea rows="5" class="input-tag form-control" id="EditGroup" name="EditGroup" placeholder="What new with this Project ?"></textarea>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text" style="float: right">
+
+                            <button class="btn button-update" onclick="EditActivity();" type="submit">Save </button>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </form>
+        </div>
+        </from>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          Confirm Submit
+        </div>
+        <div class="modal-body">
+          Are you sure you want to Deelte This Activities?
+          <input type="hidden" id="ActivityId">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <a href="#" id="submit" class="btn btn-success success" onclick="RemoveConfirmActivity();">Remove</a>
+        </div>
+      </div>
+    </div>
+
+    <!--/.main-content -->
+    <!-- END Main container -->
+    <!-- Scripts -->
+    <!-- END Main container -->
+
+
+
+    <script src="../assets/js/core.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/jquery.toaster.js"></script>
+    <style>
+      /* The container */
+
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default radio button */
+
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 50%;
+      }
+
+
+      /* On mouse-over, add a grey background color */
+
+      .container:hover input~.checkmark {
+        background-color: white;
+      }
+
+      /* When the radio button is checked, add a blue background */
+
+      .container input:checked~.orangered {
+        background-color: orangered;
+      }
+
+      .container input:checked~.offblue {
+
+        background-color: blue;
+      }
+
+      .container input:checked~.red {
+        background-color: red;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the indicator (dot/circle) when checked */
+
+      .container input:checked~.checkmark:after {
+        display: block;
+      }
+
+      /* Style the indicator (dot/circle) */
+
+      .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: none;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+
+        $(".modal").on("hidden.bs.modal", function () {
+          $("#clientName").val() = '',
+            $("#title").val() = '',
+            $("#date").val() = '',
+            $("#group").val() = ''
+
+        });
+
+
+        loadClientdata();
+        loadActivitiesdata();
+        $.fn.serializeObject = function () {
+          var o = {};
+          var a = this.serializeArray();
+          $.each(a, function () {
+            if (o[this.name]) {
+              if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+              }
+              o[this.name].push(this.value || '');
+            } else {
+              o[this.name] = this.value || '';
+            }
+          });
+          return o;
+        };
+
+      });
+      function AddActivity() {
+
+        var selectedVal = "";
+        var selected = $("input[type='radio'][name='ActivityStatus']:checked");
+        if (selected.length > 0) {
+          selectedVal = selected.val();
+        }
+        else {
+          app.toast("Please select any activities", {
+            actionTitle: 'Error',
+            actionUrl: '',
+            actionColor: 'danger'
+          });
+          return false;
+        }
+
+        $.ajax({
+          type: "POST",
+          url: localStorage.getItem("HostUrl") + "AddActivitys",
+          data: {
+            'status': selectedVal,
+            'clientId': $("#clientName").val(),
+            'title': $("#title").val(),
+            'date': $("#date").val(),
+            'group': $("#group").val()
+          },
+          success: function (data) {
+
+            if (data.status == 'success') {
+              $("#lstActivitys").html('');
+              loadActivitiesdata();
+              $('#activityModel').modal('hide');
+              app.toast(data.message, {
+                actionTitle: 'success',
+                actionUrl: '',
+                actionColor: 'success'
+              });
+
+            }
+            else {
+              app.toast(data.message, {
+                actionTitle: 'Error',
+                actionUrl: '',
+                actionColor: 'danger'
+              });
+            }
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.redirect = './../Login.html';
+            }
+          }
+        });
+
+      }
+
+      function loadClientdata() {
+
+        var hosturlt = localStorage.getItem("HostUrl");
+
+        $.ajax({
+          type: "GET",
+          url: hosturlt + "getOnlyCLeints",
+
+          success: function (data) {
+
+            var lstClients = jQuery.parseJSON(data.data);
+            var count = 0;
+            $.each(lstClients, function (key, value) {
+
+              $("#clientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+              $("#EditclientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+            })
+          },
+          error: function (data) {
+
+            if (data.responseJSON.data == "Login") {
+
+              window.location.href = './../login.html';
+            }
+          }
+
+        });
+      };
+
+      function loadActivitiesdata() {
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "get_All_Activity",
+
+          success: function (data) {
+
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+
+            var lstActivitys = jQuery.parseJSON(data.data);
+
+            var count = 0;
+
+            $.each(lstActivitys, function (key, value) {
+
+              var html = '';
+              html += '<div class="media align-items-center">';
+
+              html += '<a class="flexbox align-items-center flex-grow gap-items" href="#" data-toggle="quickview">';
+              html += '<img class="avatar" src="../assets/img/avatar/1.jpg" alt="...">';
+              html += '<div class="media-body text-truncate">';
+              html += '<h6 class="titlesearch">' + value[0]["title"] + '</h6>';
+              html += '<small>';
+              html += '<span class="divider-dash searchDisabled">' + value[0]["group"] + '</span>';
+              html += '</small>';
+              html += '</div>';
+              html += '</a>';
+              html += '<span class="lead text-fade searchDisabled"><div><button class="button-' + value[0]["status"] + '-round"></button><br><b class="font-date searchDisabled">' + value[0]["date"] + '</b></div></span>';
+              html += '<div class="dropdown searchDisabled">';
+              html += '<a class="text-lighter" href="#" data-toggle="dropdown">';
+              html += '<i class="ti-more-alt rotate-90"></i>';
+              html += '</a>';
+              html += '<div class="dropdown-menu dropdown-menu-right">';
+              html += '<a class="dropdown-item" href="#" onclick="return  ActivityEdit(\'' + key + '\');">';
+              html += '<i class="fa fa-fw fa-edit"></i> Edit</a>';
+              html += '<a class="dropdown-item" href="#" onclick="return  RemoveActivities(\'' + key + '\');">';
+              html += '<i class="fa fa-fw fa-trash"></i>Remove</a>';
+              html += '</div>';
+              html += '</div>';
+              html += '</div>';
+              $("#lstActivitys").append(html);
+            });
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.redirect = './../Login.html';
+            }
+          }
+
+        });
+      };
+
+      function ActivityEdit(id) {
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "getActivityById?id=" + id,
+          success: function (data) {
+
+            if (data.status == 'success') {
+              app.toast(data.message, {
+                actionTitle: 'success',
+                actionUrl: '',
+                actionColor: 'success'
+              });
+
+              var lstActivitiess = jQuery.parseJSON(data.data);
+              console.log(lstActivitiess.status);
+              $("input[name=EditActivityStatus][value='" + lstActivitiess.status + "']").prop("checked", true);
+              $("#Id").val(id);
+              $("#EditclientName").val(lstActivitiess.clientId);
+              $("#EditTitle").val(lstActivitiess.title);
+              $("#EditDate").val(lstActivitiess.date);
+              $("#EditGroup").val(lstActivitiess.group);
+
+              $('#EditactivityModel').modal('show');
+            }
+            else {
+              app.toast(data.message, {
+                actionTitle: 'Error',
+                actionUrl: '',
+                actionColor: 'danger'
+              });
+              //   alert("Client added failed");
+            }
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.redirect = './../Login.html';
+            }
+          }
+        });
+      }
+
+      function EditActivity() {
+
+        var selectedVal = "";
+        var selected = $("input[type='radio'][name='EditActivityStatus']:checked");
+        if (selected.length > 0) {
+          selectedVal = selected.val();
+        }
+
+        $.ajax({
+          type: "POST",
+          url: localStorage.getItem("HostUrl") + "EditActivitys",
+          data: {
+            'status': selectedVal,
+            'clientId': $("#EditclientName").val(),
+            'title': $("#EditTitle").val(),
+            'date': $("#EditDate").val(),
+            'group': $("#EditGroup").val(),
+            'id': $("#Id").val()
+          },
+          success: function (data) {
+
+            if (data.status == 'success') {
+              $("#lstActivitys").html('');
+              loadActivitiesdata();
+              $('#EditactivityModel').modal('hide');
+              app.toast(data.message, {
+                actionTitle: 'success',
+                actionUrl: '',
+                actionColor: 'success'
+              });
+
+            }
+            else {
+              app.toast(data.message, {
+                actionTitle: 'Error',
+                actionUrl: '',
+                actionColor: 'danger'
+              });
+            }
+          },
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+
+              window.redirect = './../Login.html';
+            }
+          }
+        });
+
+      }
+
+      function RemoveActivities(id) {
+
+        $("#ActivityId").val(id);
+        $('#confirm-submit').modal('show');
+
+      }
+
+      function RemoveConfirmActivity() {
+        var id = $("#ActivityId").val();
+        $.ajax({
+          type: "POST",
+          url: localStorage.getItem("HostUrl") + "DeletActivitys?id=" + id,
+          data: { 'id': id, 'which': 'full_contact' },
+          success: function (data) {
+
+            $("#lstActivitys").html('');
+            loadActivitiesdata();
+            $('#confirm-submit').modal('hide');
+
+          }
+          ,
+          error: function (data) {
+            if (data.responseJSON.data = "Login") {
+              window.redirect = './../Login.html';
+            }
+          }
+        });
+      }
+
+      function logout() {
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "logout",
+          success: function (data) {
+            localStorage.clear();
+            localStorage.removeItem("UserId");
+            window.location.href = './../login.html';
+          }
+        });
+      }
+
+      function searchTitle(id) {
+        var lstData = document.getElementById("lstActivitys").innerHTML;
+        var i, record;
+
+        d = $("#lstActivitys").closest(".media-list").find(".media:not(.media-list-header):not(.media-list-footer):not(.searchDisabled)"); "" === lstData ? d.show() : d.hide().show();
+        id = id.toUpperCase();
+        for (i = 0; i < d.length; i++) {
+          record = d[i].getElementsByTagName("h6")[0];
+
+          if (record.innerHTML.toUpperCase().indexOf(id) > -1) {
+            d[i].style.display = "";
+          } else {
+            d[i].style.display = "none";
+
+          }
+        }
+        // alert("call" + id);
+      }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+  <meta name="keywords" content="blank, starter">
+
+  <title>Account</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/core.min.css" rel="stylesheet">
+  <link href="../assets/css/app.min.css" rel="stylesheet">
+  <link href="../assets/css/style.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/modal.css" rel="stylesheet">
+
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-dots">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+    </div>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+    <header class="sidebar-header">
+      <span class="logo">
+        <a href="./index.html">
+          <span class="ion-at"></span>
+        </a>
+      </span>
+      <span class="sidebar-toggle-fold"></span>
+    </header>
+
+    <nav class="sidebar-navigation">
+      <ul class="menu">
+
+        <li class="menu-item ">
+          <a class="menu-link" href="./index.html">
+            <span class="icon fa fa-home"></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./activity.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Activity</span>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a class="menu-link" href="./client.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Clients</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Contracts.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Contracts</span>
+          </a>
+        </li>
+
+        <li class="menu-item active">
+          <a class="menu-link" href="./Account.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Account</span>
+          </a>
+        </li>
+
+    </nav>
+
+  </aside>
+  <!-- END Sidebar -->
+
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-btn sidebar-toggler">
+        <i>&#9776;</i>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <ul class="topbar-btns">
+
+        <li class="dropdown d-none d-md-block">
+          <span class="topbar-btn has-new" data-toggle="dropdown">
+            <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+          </span>
+          <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+            <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+              <a class="media" href="./profile.html">
+                <span class="avatar bg-success">
+                  <i class="ti-user"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Profile</b>
+                  </p>
+                </div>
+              </a>
+              <a class="media" href="#">
+                <span class="avatar bg-info">
+                  <i class="	fa fa-gears"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Settings</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" href="#">
+                <span class="avatar bg-warning">
+                  <i class="ti-face-sad"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Referral</b>
+                  </p>
+                </div>
+              </a>
+
+             <a class="media" onclick="logout();">
+                <span class="avatar bg-primary">
+                  <i class="fa fa-stop-circle-o"></i>
+                </span>
+                <div class="media-body" onclick="Logout();">
+                  <p>
+                    <b>Logout</b>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </header>
+  <!-- END Topbar -->
+
+
+  <!-- Main container -->
+  <!-- Main container -->
+  <main>
+
+    <div class="main-content">
+      <div class="media-list media-list-divided media-list-hover" data-provide="selectall">
+        <header class="flexbox align-items-center media-list-header bg-transparent b-0 py-16 pl-20">
+
+          <div>
+            <div class="lookup lookup-circle lookup-right">
+              <input type="text" data-provide="media-search">
+            </div>
+          </div>
+        </header>
+
+
+        <div class="row" id="lstAccounts">
+        </div>
+
+
+
+        <div class="fab fab-fixed">
+          <a class="btn btn-float btn-primary" href="#qv-user-add" title="New Client" data-provide="tooltip" data-toggle="modal" data-target="#AddAccountModel">
+            <i class="ti-plus"></i>
+          </a>
+        </div>
+
+
+
+      </div>
+    </div>
+    <!--/.main-content -->
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-center text-md-left">Copyright © 2018. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+  </main>
+
+  <div id="AddAccountModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+
+          <div class="col-md-12 Bg-white padding-0">
+            <div class="col-md-12">
+              <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <h4 class="card-title">
+                    <strong>New Account</strong>
+                  </h4>
+                  <div class="card-body">
+                    <div class="row" style="margin-right: -64px !important;">
+
+                      <div class="col-md-12 text-center" style="padding-bottom: 30px;">
+                        <img class="avatar img-icon" src="./../assets/img/avatar/1.jpg" alt="...">
+                        </span>
+                        <br/>
+
+                      </div>
+                      <br/>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="input-normal">Client</label>
+                          <select class="input-tag form-control" id="clientName" name="clientName">
+                            <option value="0">--Select Client--</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Title</label>
+                          <select class="input-tag form-control" id="title" name="title">
+                            <option value="Google">Google</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="Asana">Asana</option>
+                            <option value="Trello">Trello</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text">
+                          <label for="input-help-hover">User Name</label>
+                          <input type="text" class="input-tag form-control" id="AccountUserName" name="AccountUserName" placeholder="http.google.ui">
+
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text">
+                          <label for="input-help-hover">Password</label>
+                          <input type="text" class="input-tag form-control" id="AccountPassword" name="AccountPassword" placeholder="http.google.ui">
+
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text" style="float: right">
+
+                          <button class="btn button-update" type="submit" onclick="AddAccount();">Create</button>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="EditAccountModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+
+          <div class="col-md-12 Bg-white padding-0">
+            <div class="col-md-12">
+              <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <h4 class="card-title">
+                    <strong>Edit Account</strong>
+                  </h4>
+                  <div class="card-body">
+                    <div class="row" style="margin-right: -64px !important;">
+
+                      <div class="col-md-12 text-center" style="padding-bottom: 30px;">
+                        <img class="avatar img-icon" src="./../assets/img/avatar/1.jpg" alt="...">
+                        </span>
+                        <br/>
+
+                      </div>
+                      <br/>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label for="input-normal">Client</label>
+                          <select class="input-tag form-control" id="EditclientName" name="EditclientName">
+                            <option value="0">--Select Client--</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Title</label>
+
+                          <select class="input-tag form-control" id="EditTitle" name="EditTitle">
+                            <option value="Google">Google</option>
+                            <option value="GitHub">GitHub</option>
+                            <option value="Asana">Asana</option>
+                            <option value="Trello">Trello</option>
+                          </select>
+                          <input type="text" class="input-tag form-control" id="Id" name="Id" style="display :none">
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text">
+                          <label for="input-help-hover">User Name</label>
+                          <input type="text" class="input-tag form-control" id="EditAccountUserName" name="EditAccountUserName" placeholder="http.google.ui">
+
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text">
+                          <label for="input-help-hover">Password</label>
+                          <input type="text" class="input-tag form-control" id="EditAccountPassword" name="EditAccountPassword" placeholder="http.google.ui">
+
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+
+                        <div class="form-group has-form-text" style="float: right">
+
+                          <button class="btn button-update" type="submit" onclick="EditAccount();">Update</button>
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- END Main container -->
+  <!-- Scripts -->
+  <script src="../assets/js/core.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/js/script.min.js"></script>
+  <script src="../assets/js/jquery.toaster.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      loadClientdata();
+      loadAccountsdata();
+      $.fn.serializeObject = function () {
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+          if (o[this.name]) {
+            if (!o[this.name].push) {
+              o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+          } else {
+            o[this.name] = this.value || '';
+          }
+        });
+        return o;
+      };
+
+    });
+
+    function loadClientdata() {
+
+      $.ajax({
+        type: "GET",
+        ///  url: localStorage.getItem("HostUrl") + "getOnlyCLeints",
+        url: "http://localhost:3000/getOnlyCLeints",
+        success: function (data) {
+
+          var lstClients = jQuery.parseJSON(data.data);
+          var count = 0;
+          $.each(lstClients, function (key, value) {
+
+            $("#clientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+            $("#EditclientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+          })
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+
+      });
+    };
+
+    function loadAccountsdata() {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "get_All_Accounts",
+
+        success: function (data) {
+
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+          var lstAccounts = jQuery.parseJSON(data.data);
+
+          var count = 0;
+
+          $.each(lstAccounts, function (key, value) {
+
+            var html = '';
+            html += '<div class="col-md-3 media" onclick="EditAccountModelOpen(\'' + key + '\');return false">';
+
+            html += '<div class="col-md-1"></div>';
+            html += '<div class="col-md-10">';
+            html += '<div class="col-md-12 Bg-white">';
+            html += '<span class="icone-ecllipe">';
+            html += '<span class=" fa fa-ellipsis-v"></span>';
+            // html += '<span>maryam.amiri@gmail.com</span>';
+            html += '</span>';
+            html += '<div class="row img-padding padding-top-50">';
+            html += '<img src="./../assets/img/' + value[0]["title"] + '.png" class="img-icon" />';
+            html += '</div>';
+            // html += '<div class="col-md-12 text-center">';
+            // html += '<label class="font-blog">' + value[0]["title"] + '</label>';
+            // html += '</div>';
+            html += '<div class="col-md-12 text-center padding-bottom-20">';
+            html += '<label class="font-blog-profile">' + value[0]["AccountUserName"] + '&nbsp&nbsp</label>';
+            html += '<label class="font-blog-profile">' + value[0]["AccountPassword"] + '</label>';
+            html += '</div>';
+            html += '</div>';
+            html += ' </div>';
+            html += '<div class="col-md-1"></div>';
+
+            html += '</div>';
+            $("#lstAccounts").append(html);
+          });
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+
+      });
+    };
+
+    function AddAccount() {
+      $.ajax({
+        type: "POST",
+        url: localStorage.getItem("HostUrl") + "AddAccounts",
+        data: {
+          'clientId': $("#clientName").val(),
+          'title': $("#title").val(),
+          'AccountUserName': $("#AccountUserName").val(),
+          'AccountPassword': $("#AccountPassword").val()
+        },
+        success: function (data) {
+
+          if (data.status == 'success') {
+            $("#lstAccounts").html('');
+            loadAccountsdata();
+            $('#AddAccountModel').modal('hide');
+
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+          }
+          else {
+            app.toast(data.message, {
+              actionTitle: 'Error',
+              actionUrl: '',
+              actionColor: 'danger'
+            });
+          }
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+
+    }
+
+    function EditAccountModelOpen(id) {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "getAccountsById?id=" + id,
+        success: function (data) {
+
+          if (data.status == 'success') {
+
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+            var lstActivitiess = jQuery.parseJSON(data.data);
+
+            $("#Id").val(id);
+            $("#EditclientName").val(lstActivitiess.clientId);
+            $("#EditTitle").val(lstActivitiess.title);
+            $("#EditAccountPassword").val(lstActivitiess.AccountPassword);
+            $("#EditAccountUserName").val(lstActivitiess.AccountUserName);
+
+            $('#EditAccountModel').modal('show');
+          }
+          else {
+            app.toast(data.message, {
+              actionTitle: 'Error',
+              actionUrl: '',
+              actionColor: 'danger'
+            });
+          }
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+    }
+
+    function EditAccount() {
+
+      $.ajax({
+        type: "POST",
+        url: localStorage.getItem("HostUrl") + "EditAccounts",
+        data: {
+          'clientId': $("#EditclientName").val(),
+          'title': $("#EditTitle").val(),
+          'AccountPassword': $("#EditAccountPassword").val(),
+          'AccountUserName': $("#EditAccountUserName").val(),
+          'id': $("#Id").val()
+        },
+        success: function (data) {
+
+          if (data.status == 'success') {
+
+            $('#EditAccountModel').modal('hide');
+            $("#lstAccounts").html('');
+            loadAccountsdata();
+
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+          }
+          else {
+            app.toast(data.message, {
+              actionTitle: 'Error',
+              actionUrl: '',
+              actionColor: 'danger'
+            });
+          }
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+
+    }
+
+    function logout(){
+        $.ajax({
+          type: "GET",
+          url: localStorage.getItem("HostUrl") + "logout",
+          success: function (data) {
+            localStorage.clear();
+      localStorage.removeItem("UserId");
+            window.location.href = './../login.html';
+          }
+        });
+      }
+
+  </script>
+</body>
+
+</html>

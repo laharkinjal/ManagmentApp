@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+  <meta name="keywords" content="blank, starter">
+
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/core.min.css" rel="stylesheet">
+  <link href="../assets/css/app.min.css" rel="stylesheet">
+  <link href="../assets/css/style.min.css" rel="stylesheet">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-dots">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+    </div>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+    <header class="sidebar-header">
+      <span class="logo">
+        <a href="./index.html">
+          <span class="ion-at"></span>
+        </a>
+      </span>
+      <span class="sidebar-toggle-fold"></span>
+    </header>
+
+    <nav class="sidebar-navigation">
+      <ul class="menu">
+
+        <li class="menu-item active">
+          <a class="menu-link" href="./index.html">
+            <span class="icon fa fa-home"></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a class="menu-link" href="./activity.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Activity</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./client.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Client</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Contracts.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Contracts</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Account.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Account</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
+
+  </aside>
+  <!-- END Sidebar -->
+
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-btn sidebar-toggler">
+        <i>&#9776;</i>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <ul class="topbar-btns">
+        <li class="dropdown">
+          <span class="topbar-btn has-new" data-toggle="dropdown">
+            <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+          </span>
+          <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+            <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+              <a class="media" href="./profile.html">
+                <span class="avatar bg-success">
+                  <i class="ti-user"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Profile</b>
+                  </p>
+                </div>
+              </a>
+              <a class="media" href="#">
+                <span class="avatar bg-info">
+                  <i class="	fa fa-gears"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Settings</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" href="#">
+                <span class="avatar bg-warning">
+                  <i class="ti-face-sad"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Referral</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" onclick="logout();">
+                <span class="avatar bg-primary">
+                  <i class="fa fa-stop-circle-o"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Logout</b>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="dropdown d-none d-md-block">
+          <span class="topbar-btn has-new">
+            <a href="#" data-toggle="modal" data-target="#TimeModel">
+              <i class="ion-ios-timer"></i>
+
+            </a>
+          </span>
+
+        </li>
+
+
+
+      </ul>
+
+    </div>
+  </header>
+  <!-- END Topbar -->
+
+
+  <!-- Main container -->
+  <main>
+    <div class="main-content">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">
+                <strong>Project Progress</strong>
+              </h5>
+              <a class="btn btn-xs btn-secondary" href="#">More Charts</a>
+            </div>
+
+            <div class="card-body">
+              <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                </div>
+              </div>
+              <ul class="list-inline text-center gap-items-4 mb-30">
+                <li class="list-inline-item">
+                  <span class="badge badge-lg badge-dot mr-1" style="background-color: #b1bccb"></span>
+                  <span>Advertising</span>
+                </li>
+                <li class="list-inline-item">
+                  <span class="badge badge-lg badge-dot mr-1" style="background-color: #01c4cc"></span>
+                  <span>Hosting</span>
+                </li>
+              </ul>
+
+              <canvas id="chart-js-2" height="296" data-provide="chartjs" width="685" class="chartjs-render-monitor" style="display: block; width: 685px; height: 296px;"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">
+                <strong>Activity</strong>
+              </h5>
+
+            </div>
+            <div class="card-body">
+              <div id="lstactivity">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div>
+
+              <h4 class="card-title">
+                <strong>Time</strong> Tracked
+                <span style="float: right">
+                  <select>
+                    <option>Last 14 days</option>
+                  </select>
+                </span>
+              </h4>
+
+            </div>
+            <div class="card-body">
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!--/.main-content -->
+    <!-- Footer -->
+    <!-- Footer -->
+
+
+    <!-- END Footer -->
+    </div>
+
+
+
+  </main>
+  <!-- END Main container -->
+
+  <div id="TimeModel" class="modal fade" role="dialog">
+    <div class="modal-dialog  modal-sm">
+
+      <!-- Modal content-->
+      <div class="modal-content Bg-transparent">
+
+        <div class="modal-body">
+
+          <from class="frmAddTimer" data-provide="validation" data-disable="false">
+            <div class="col-md-12 Bg-white padding-0">
+              <div class="col-md-12">
+                <button type="button" class="close text-md-left" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="card">
+
+                    <div class="card-body">
+                      <div class="row" style="margin-right: -64px !important;">
+                        <div class="col-md-12">
+                          <h4 class=" actity-text">
+                            <strong>Add Timer</strong>
+                          </h4>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="input-normal update-lable-font">Client</label>
+                            <select class="input-tag form-control required" id="clientName" name="clientName">
+                              <!-- <option value="" disabled="disabled">--Select Client--</option> -->
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="col-md-7">
+
+                          <div class="form-group">
+                            <label for="input-help-text update-lable-font ">Time</label>
+                            <div class="input-group" data-provide="clockpicker" data-autoclose="true">
+                              <input type="text" class="form-control" id="time" name="time" required>
+                              <span class="input-group-addon">
+                                <i class="ti-timer"></i>
+                              </span>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-5">
+
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font require">Rate</label>
+
+                            <input type="number" class="input-tag form-control" id="rate" name="rate" placeholder="$ 0.00" required>
+                            <div class="invalid-feedback"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group has-form-text">
+                            <label for="input-help-hover update-lable-font">Date</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control txtinput dateClass" id="date" name="date" data-provide="datepicker" required>
+                              <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                              </span>
+                            </div>
+                            <div class="invalid-feedback"></div>
+                          </div>
+
+
+                        </div>
+
+                        <div class="col-md-12">
+
+                          <div class="form-group has-form-text" style="float: right">
+
+                            <button class="btn button-update" type="submit" onclick="AddTimer();">Save </button>
+
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </form>
+        </div>
+        Text....
+        <input type="text" ID="fromdate" />
+        </from>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Global quickview -->
+  <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+    <div class="spinner-linear">
+      <div class="line"></div>
+    </div>
+  </div>
+  <!-- END Global quickview -->
+
+
+
+
+  <!-- Scripts -->
+  <script src="../assets/js/core.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/js/script.min.js"></script>
+  <script src="../assets/js/jquery.canvasjs.min.js"></script>
+
+  <script>
+    app.ready(function () {
+      var today = new Date();
+      $('.dateClass').datepicker({
+        format: 'mm-dd-yyyy',
+        autoclose: true,
+        endDate: "today",
+        maxDate: today
+      }).on('changeDate', function (ev) {
+        $(this).datepicker('hide');
+      });
+
+
+      $('.dateClass').keyup(function () {
+        if (this.value.match(/[^0-9]/g)) {
+          this.value = this.value.replace(/[^0-9^-]/g, '');
+        }
+      });
+
+      loadActivitiesdata();
+      loadClientdata();
+      loadTimerdata();
+      // Scoll to the end of chat content
+      $('#chat-content').scrollToEnd();
+
+
+      // Earning chart      
+      var chartjs2 = new Chart($("#chart-js-2"), {
+        type: 'line',
+        data: {
+          labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+          datasets: [
+            {
+              label: "Task reamaining",
+              backgroundColor: "rgba(51,202,185,0.5)",
+              borderColor: "rgba(51,202,185,0.5)",
+              pointRadius: 0,
+              data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+            },
+            {
+              label: "Task completed",
+              backgroundColor: "rgba(243,245,246,0.8)",
+              borderColor: "rgba(243,245,246,0.8)",
+              pointRadius: 0,
+              data: [9000, 5000, 4000, 2000, 8000, 3000, 9000]
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+        }
+      });
+      // Bar chart
+      //
+    });
+
+
+    function loadClientdata() {
+
+      var hosturlt = localStorage.getItem("HostUrl");
+
+      $.ajax({
+        type: "GET",
+        url: hosturlt + "getOnlyCLeints",
+
+        success: function (data) {
+
+          var lstClients = jQuery.parseJSON(data.data);
+          var count = 0;
+          $.each(lstClients, function (key, value) {
+
+            $("#clientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+            $("#EditclientName").append($("<option></option>").val(key).html(value[0]["firstName"] + ' ' + value[0]["lastName"]));
+          })
+        },
+        error: function (data) {
+
+          if (data.responseJSON.data == "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+
+      });
+    };
+
+    function GetSortOrder(prop) {
+      return function (a, b) {
+        if (a[prop] > b[prop]) {
+          return 1;
+        } else if (a[prop] < b[prop]) {
+          return -1;
+        }
+        return 0;
+      }
+    }
+
+    function timeToDecimal(t) {
+      var arr = t.split(':');
+      var dec = parseInt((arr[1] / 6) * 10, 10);
+
+      return parseFloat(parseInt(arr[0], 10) + '.' + (dec < 10 ? '0' : '') + dec);
+    }
+    var checkDate = []
+    var barChartData = []
+    function timeToMins(time) {
+      var b = time.split(':');
+      return b[0] * 60 + +b[1];
+    }
+
+    function timeFromMins(mins) {
+      function z(n) { return (n < 10 ? '0' : '') + n; }
+      var h = (mins / 60 | 0) % 24;
+      var m = mins % 60;
+      return z(h) + ':' + z(m);
+    }
+
+    function addTimes(t0, t1) {
+      return timeFromMins(timeToMins(t0) + timeToMins(t1));
+    }
+
+    function remove(array, element) {
+      const index = array.indexOf(element);
+      array.splice(index, 1);
+    }
+
+    function loadTimerdata() {
+      var id = localStorage.getItem("UserId");
+
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "getAllTimerByUser",
+
+        success: function (data) {
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+          var lstTimers = jQuery.parseJSON(data.data);
+          var recipientsArray = lstTimers.sort();
+          var count = Object.keys(recipientsArray).length;
+          var reportRecipientsDuplicate = [];
+          var last_element = "";
+
+
+          //bar Chart Start
+          var date = new Date();
+          var Dates = []
+          console.log('Main array..', recipientsArray)
+
+          for (var i = 1; i <= 14; i++) {
+            var chartDate = date - 1000 * 60 * 60 * 24 * i;
+            chartDate = new Date(chartDate);
+            var last = new Date();
+            var day = chartDate.getDate();
+            var month = chartDate.getMonth() + 1;
+            var year = chartDate.getFullYear();
+            var cpmapareMonth = '' + month
+            cpmapareday = '' + day
+            if (cpmapareMonth.replace(/\s+/g, '').length == 1) {
+              month = '0' + month
+            }
+            if (cpmapareday.replace(/\s+/g, '').length == 1) {
+              day = '0' + day
+            }
+            var a = month + '/' + day + '/' + year
+            var nameOfMomth = month + '-' + day + '-' + year
+            var objDate = new Date(nameOfMomth),
+              locale = "en-us",
+              monthname = objDate.toLocaleString(locale, { month: "short" });
+            var lable = monthname + ' ' + day
+            Dates.push({ y: a, lable: lable })
+            checkDate.push(lable)
+          }
+          for (var m = 0; m < Dates.length; m++) {
+            for (var i = 0; i < lstTimers.length; i++) {
+              if (lstTimers[i].date == Dates[m].y) {
+                var time = timeToDecimal(lstTimers[i].time)
+                var total = parseInt(lstTimers[i].rate) * parseInt(time)
+                var t = timeToDecimal(lstTimers[i].time)
+                var total = t * parseInt(lstTimers[i].rate)
+                getCharData(Dates[m].lable, lstTimers[i].rate, time, parseInt(total))
+              }
+            }
+          }
+      
+          var ChartArray = []
+          for(var t=0;t<15;t++){
+            ChartArray.push({ '1': '1' })
+          }
+          for (var p = 0; p < Dates.length; p++) {
+            const index = barChartData.findIndex(item => item.label == Dates[p].lable);
+            if (index == -1) {
+              ChartArray[p] = {
+                label: Dates[p].lable,
+                rate: 0,
+                time: 0,
+                y: 0
+              }
+              barChartData.push({
+                label: Dates[p].lable,
+                rate: 0,
+                time: 0,
+                y: 0
+              })
+            }
+            else {
+              for (var j = 0; j < barChartData.length; j++) {
+
+                if (barChartData[j].label == Dates[p].lable) {
+
+                  var decimaltime = barChartData[j].time;
+                  var hrs = parseInt(Number(decimaltime));
+                  var min = Math.round((Number(decimaltime) - hrs) * 60);
+                  var clocktime = hrs + ':' + min;
+                  ChartArray[p] = {
+                    label: barChartData[j].label,
+                    rate: barChartData[j].rate,
+                    time: clocktime,
+                    y: barChartData[j].total
+                  }
+                }
+              }
+            }
+          }
+          var reverseChartArray = []
+          for (var k = 13; k >= 0; k--) {
+            reverseChartArray.push(ChartArray[k])
+          }
+          console.log('Bar Chart display data', reverseChartArray)
+
+          var options = {
+            theme: "light2",
+            animationEnabled: true,
+            toolTip: {
+              content: "<br/>Total Billed :-{y} <br>Total hour :-{time} "
+            },
+          
+            axisX2: {
+              labelFontColor: "#46516180",
+              labelFontSize: 20,
+              gridThickness: 0,
+              tickLength:0,
+            },
+            axisY: {
+              valueFormatString: " ",
+              gridThickness:0.1,
+              tickLength:0,
+              lineThickness:0,
+              labelFormatter: function () {
+                return " ";
+              }
+            },
+            data: [{
+              // lineColor: "red",
+              // borderColor : "black",
+              // borderThickness:2,
+              color: "LightSeaGreen",
+              type: "column",
+              axisXType: "secondary",
+              yValueFormatString: "#,##0.0#" % "",
+
+              dataPoints:
+                reverseChartArray
+            }]
+          };
+
+
+          $("#chartContainer").CanvasJSChart(options);
+ //bar Chart end
+
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.redirect = './../Login.html';
+          }
+        }
+
+      });
+    };
+    async function getCharData(data, rate, time, total) {
+      var countData = 0;
+      for (var k = 0; k < checkDate.length; k++) {
+        if (data == checkDate[k] && countData == 0) {
+
+          var month = data
+          checkDetails(month, rate, data, time, total);
+          countData++
+        }
+      }
+    }
+    async function checkDetails(month, productPrice, data, time, total) {
+      if (barChartData.length != 0) {
+        var count = 0
+        for (var i = 0; i < barChartData.length; i++) {
+
+          if (barChartData[i].label == month) {
+
+            var price = barChartData[i].rate
+            var time1 = barChartData[i].time
+            var total1 = barChartData[i].total
+
+            barChartData[i] = {
+              label: data,
+              rate: parseInt(productPrice) + parseInt(price),
+              time: time + time1,
+              total: total + total1
+            }
+
+            count++
+          }
+        }
+
+        if (count == 0) {
+
+          barChartData.push({
+            label: data,
+            rate: parseInt(productPrice),
+            time: time,
+            total: total
+          });
+          count++
+        }
+      }
+      else {
+        barChartData.push({
+          label: data,
+          rate: parseInt(productPrice),
+          time: time,
+          total: total
+        });
+      }
+    }
+
+    function logout() {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "logout",
+        success: function (data) {
+          localStorage.clear();
+          localStorage.removeItem("UserId");
+          window.location.href = './../login.html';
+        }
+      });
+    };
+
+    function loadActivitiesdata() {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "get_All_Activity",
+
+        success: function (data) {
+
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+
+          var lstActivitys = jQuery.parseJSON(data.data);
+
+          var count = 0;
+
+          $.each(lstActivitys, function (key, value) {
+
+            var html = '';
+            html += '<span class="icone-circle">';
+            if (value[0]["status"] == "oranged") {
+              html += '<span class="fa fa-circle" style="color:orange"> </span> ' + value[0]["date"] + '';
+            }
+            else if (value[0]["status"] == "offblue") {
+              html += '<span class="fa fa-circle" style="color:blue"> </span> ' + value[0]["date"] + '';
+            }
+            else {
+              html += '<span class="fa fa-circle" style="color:red"> </span> ' + value[0]["date"] + '';
+            }
+
+            html += '<br>';
+            html += '<span style="margin-left: 8%"><a href="#">' + value[0]["title"] + '</a></span>';
+            html += ' <br>';
+            html += '<span style="margin-left: 8%">' + value[0]["group"] + '</span>';
+            html += '</span>';
+            html += ' <br>';
+
+            $("#lstactivity").append(html);
+          });
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.redirect = './../Login.html';
+          }
+        }
+
+      });
+    };
+
+    $(function () {
+      $('form.frmAddTimer').on('submit', function (e) {
+
+        e.preventDefault();
+
+        var TimerData = $(this).serializeObject();
+
+      });
+
+    });
+
+    function AddTimer() {
+
+      if ($("#time").val() == "") {
+        app.toast("Please select time", {
+          actionTitle: 'Error',
+          actionUrl: '',
+          actionColor: 'danger'
+        });
+        return false;
+      }
+      if ($("#rate").val() == "") {
+        app.toast("Please select rate", {
+          actionTitle: 'Error',
+          actionUrl: '',
+          actionColor: 'danger'
+        });
+        return false;
+      }
+      if ($("#date").val() == "") {
+        app.toast("Please select date", {
+          actionTitle: 'Error',
+          actionUrl: '',
+          actionColor: 'danger'
+        });
+        return false;
+      }
+
+      $.ajax({
+        type: "POST",
+        url: localStorage.getItem("HostUrl") + "AddTimer",
+        data: {
+          'clientId': $("#clientName").val(),
+          'time': $("#time").val(),
+          'date': $("#date").val(),
+          'rate': $("#rate").val()
+        },
+        success: function (data) {
+
+          if (data.status == 'success') {
+            $('#TimeModel').modal('hide');
+            app.toast(data.message, {
+              actionTitle: 'success',
+              actionUrl: '',
+              actionColor: 'success'
+            });
+
+          }
+          else {
+            app.toast(data.message, {
+              actionTitle: 'Error',
+              actionUrl: '',
+              actionColor: 'danger'
+            });
+          }
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.location.href = './../login.html';
+          }
+        }
+      });
+    }
+
+  </script>
+</body>
+
+</html>

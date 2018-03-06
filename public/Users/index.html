@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Responsive admin dashboard and web application ui kit. ">
+  <meta name="keywords" content="blank, starter">
+
+  <title>Home</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,300i" rel="stylesheet">
+
+  <!-- Styles -->
+  <link href="../assets/css/core.min.css" rel="stylesheet">
+  <link href="../assets/css/app.min.css" rel="stylesheet">
+  <link href="../assets/css/style.min.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../assets/img/favicon.png">
+  <style>
+    #morris-bar {
+      display: inline-block;
+      height: 300px;
+      width: 12%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-dots">
+      <span class="dot1"></span>
+      <span class="dot2"></span>
+      <span class="dot3"></span>
+    </div>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar sidebar-icons-right sidebar-icons-boxed sidebar-expand-lg">
+    <header class="sidebar-header">
+      <span class="logo">
+        <a href="./index.html">
+          <span class="ion-at"></span>
+        </a>
+      </span>
+      <span class="sidebar-toggle-fold"></span>
+    </header>
+
+    <nav class="sidebar-navigation">
+      <ul class="menu">
+
+        <li class="menu-item active">
+          <a class="menu-link" href="./index.html">
+            <span class="icon fa fa-home"></span>
+            <span class="title">Dashboard</span>
+          </a>
+        </li>
+
+        <!-- <li class="menu-item">
+          <a class="menu-link" href="./activity.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Activity</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./client.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Client</span>
+          </a>
+        </li> -->
+        <li class="menu-item">
+          <a class="menu-link" href="./Contracts.html">
+            <span class="icon fa fa-paste"></span>
+            <span class="title">Contracts</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="./Account.html">
+            <span class="icon fa fa-file-text-o"></span>
+            <span class="title">Account</span>
+          </a>
+        </li>
+
+
+      </ul>
+    </nav>
+
+  </aside>
+  <!-- END Sidebar -->
+
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="topbar-btn sidebar-toggler">
+        <i>&#9776;</i>
+      </span>
+    </div>
+
+    <div class="topbar-right">
+      <ul class="topbar-btns">
+        <li class="dropdown d-none d-md-block">
+          <span class="topbar-btn has-new" data-toggle="dropdown">
+            <img class="avatar" src="./../assets/img/1.jpg" alt="...">
+          </span>
+          <div class="dropdown-menu dropdown-menu-right" style="left: -155px;">
+
+            <div class="media-list media-list-hover media-list-divided media-list-xs">
+
+              <a class="media" href="./profile.html">
+                <span class="avatar bg-success">
+                  <i class="ti-user"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Profile</b>
+                  </p>
+                </div>
+              </a>
+              <a class="media" href="#">
+                <span class="avatar bg-info">
+                  <i class="	fa fa-gears"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Settings</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" href="#">
+                <span class="avatar bg-warning">
+                  <i class="ti-face-sad"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Referral</b>
+                  </p>
+                </div>
+              </a>
+
+              <a class="media" onclick="logout();">
+                <span class="avatar bg-primary">
+                  <i class="fa fa-stop-circle-o"></i>
+                </span>
+                <div class="media-body">
+                  <p>
+                    <b>Logout</b>
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </header>
+  <!-- END Topbar -->
+
+
+  <!-- Main container -->
+  <main>
+    <div class="main-content">
+
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">
+                <strong>Project Progress</strong>
+              </h5>
+              <a class="btn btn-xs btn-secondary" href="#">More Charts</a>
+            </div>
+
+            <div class="card-body">
+              <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                  <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                </div>
+              </div>
+              <ul class="list-inline text-center gap-items-4 mb-30">
+                <li class="list-inline-item">
+                  <span class="badge badge-lg badge-dot mr-1" style="background-color: #b1bccb"></span>
+                  <span>Advertising</span>
+                </li>
+                <li class="list-inline-item">
+                  <span class="badge badge-lg badge-dot mr-1" style="background-color: #01c4cc"></span>
+                  <span>Hosting</span>
+                </li>
+              </ul>
+
+              <canvas id="chart-js-2" height="296" data-provide="chartjs" width="685" class="chartjs-render-monitor" style="display: block; width: 685px; height: 296px;"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="card-title">
+                <strong>Activity</strong>
+              </h5>
+
+            </div>
+            <div class="card-body">
+              <div id="lstactivity">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <h4 class="card-title">
+              <strong>Bar</strong> chart</h4>
+
+            <div class="card-body">
+              <div id="morris-bar" data-provide="morris"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!--/.main-content -->
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="text-center text-md-left">Copyright © 2018. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- END Footer -->
+    </div>
+    </footer>
+    <!-- END Footer -->
+
+  </main>
+  <!-- END Main container -->
+
+
+
+  <!-- Global quickview -->
+  <div id="qv-global" class="quickview" data-url="assets/data/quickview-global.html">
+    <div class="spinner-linear">
+      <div class="line"></div>
+    </div>
+  </div>
+  <!-- END Global quickview -->
+
+
+
+  <!-- Scripts -->
+  <script src="../assets/js/core.min.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/js/script.min.js"></script>
+  <script>
+    app.ready(function () {
+      loadActivitiesdata();
+      loadTimerdata();
+      // Scoll to the end of chat content
+      $('#chat-content').scrollToEnd();
+
+
+      // Earning chart      
+      var chartjs2 = new Chart($("#chart-js-2"), {
+        type: 'line',
+        data: {
+          labels: ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+          datasets: [
+            {
+              label: "Task reamaining",
+              backgroundColor: "rgba(51,202,185,0.5)",
+              borderColor: "rgba(51,202,185,0.5)",
+              pointRadius: 0,
+              data: [0, 6000, 8000, 5000, 2000, 5000, 7500]
+            },
+            {
+              label: "Task completed",
+              backgroundColor: "rgba(243,245,246,0.8)",
+              borderColor: "rgba(243,245,246,0.8)",
+              pointRadius: 0,
+              data: [9000, 5000, 4000, 2000, 8000, 3000, 9000]
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+        }
+      });
+
+      // Bar chart
+      //
+
+
+    });
+
+    function logout() {
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "logout",
+        success: function (data) {
+          localStorage.clear();
+          localStorage.removeItem("UserId");
+          window.location.href = './../login.html';
+        }
+      });
+    }
+
+    function loadActivitiesdata() {
+      var id = localStorage.getItem("UserId");
+
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "getActivityAssignByAdmin?id=" + id,
+
+        success: function (data) {
+
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+
+          var lstActivitys = jQuery.parseJSON(data.data);
+
+          var count = 0;
+
+          $.each(lstActivitys, function (key, value) {
+
+            var html = '';
+            html += '<span class="icone-circle">';
+            if (value[0]["status"] == "oranged") {
+              html += '<span class="fa fa-circle" style="color:orange"> </span> ' + value[0]["date"] + '';
+            }
+            else if (value[0]["status"] == "offblue") {
+              html += '<span class="fa fa-circle" style="color:blue"> </span> ' + value[0]["date"] + '';
+            }
+            else {
+              html += '<span class="fa fa-circle" style="color:red"> </span> ' + value[0]["date"] + '';
+            }
+
+            html += '<br>';
+            html += '<span style="margin-left: 8%"><a href="#">' + value[0]["title"] + '</a></span>';
+            html += ' <br>';
+            html += '<span style="margin-left: 8%">' + value[0]["group"] + '</span>';
+            html += '</span>';
+            html += ' <br>';
+
+            $("#lstactivity").append(html);
+          });
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.redirect = './../Login.html';
+          }
+        }
+
+      });
+    };
+
+    function timeToDecimal(t) {
+      var arr = t.split(':');
+      var dec = parseInt((arr[1] / 6) * 10, 10);
+
+      return parseFloat(parseInt(arr[0], 10) + '.' + (dec < 10 ? '0' : '') + dec);
+    }
+
+    function loadTimerdata() {
+      var id = localStorage.getItem("UserId");
+
+      $.ajax({
+        type: "GET",
+        url: localStorage.getItem("HostUrl") + "getAllTimerAssignByAdmin?id=" + id,
+
+        success: function (data) {
+
+          app.toast(data.message, {
+            actionTitle: 'success',
+            actionUrl: '',
+            actionColor: 'success'
+          });
+
+
+          var lstTimers = jQuery.parseJSON(data.data);
+
+          var lsttime = [];
+
+          $.each(lstTimers, function (key, value) {
+
+            var d = {};
+
+            d.y = value[0]["date"];
+            d.a = parseFloat(value[0]["rate"]) * timeToDecimal(value[0]["time"]);
+            d.t = timeToDecimal(value[0]["time"]);
+            d.r = value[0]["rate"];
+            lsttime.push(d);
+          });
+
+
+          Morris.Bar({
+            element: 'morris-bar',
+            data: lsttime,
+            xkey: 'y',
+            ykeys: ['a'],
+            labels: ['Total Bill', 'rate'],
+            barColors: ['#a1dfe5'],
+            hideHover: 'auto',
+            hoverCallback: function (index, options, content, row) {
+              var date = new Date(row.y); 
+            
+            return date.toDateString() + '<br/>Billed :- ' + row.t+ '<br>Billed Amount :- '+row.a;
+          },
+            gridLineColor: '#eef0f2',
+            gridTextWeight: ['normal'],
+            resize: true
+          });
+
+          // var lstActivitys = jQuery.parseJSON(data.data);
+
+          // var count = 0;
+
+          // $.each(lstActivitys, function (key, value) {
+
+          //   var html = '';
+          //   html += '<span class="icone-circle">';
+          //   if (value[0]["status"] == "oranged") {
+          //     html += '<span class="fa fa-circle" style="color:orange"> </span> ' + value[0]["date"] + '';
+          //   }
+          //   else if (value[0]["status"] == "offblue") {
+          //     html += '<span class="fa fa-circle" style="color:blue"> </span> ' + value[0]["date"] + '';
+          //   }
+          //   else {
+          //     html += '<span class="fa fa-circle" style="color:red"> </span> ' + value[0]["date"] + '';
+          //   }
+
+          //   html += '<br>';
+          //   html += '<span style="margin-left: 8%"><a href="#">' + value[0]["title"] + '</a></span>';
+          //   html += ' <br>';
+          //   html += '<span style="margin-left: 8%">' + value[0]["group"] + '</span>';
+          //   html += '</span>';
+          //   html += ' <br>';
+
+          //   $("#lstactivity").append(html);
+          // });
+        },
+        error: function (data) {
+          if (data.responseJSON.data = "Login") {
+
+            window.redirect = './../Login.html';
+          }
+        }
+
+      });
+    };
+  </script>
+
+
+</body>
+
+</html>

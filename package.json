@@ -1,0 +1,22 @@
+{
+  "name": "live",
+  "version": "1.0.0",
+  "description": "This is Node.js API Server",
+  "keywords": [
+    "favicon"
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase-admin": "^5.8.2",
+    "http-server": "^0.11.1"
+  }
+}

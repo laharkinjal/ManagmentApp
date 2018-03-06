@@ -1,0 +1,221 @@
+@media (min-width: 576px){
+.modal-sm {
+    width: 500px !important;
+    max-width: 500px !important;
+}
+}
+.padding-div
+{
+    margin-top: 10px;
+}
+.button-round
+{
+    border-radius: 50%;
+    padding: 6px;
+    border: 0px;
+    background-color: green;
+}
+.button-offblue-round
+{
+    border-radius: 50%;
+    padding: 6px;
+    border: 0px;
+    background-color: blue;
+}
+.button-red-round
+{
+    border-radius: 50%;
+    padding: 6px;
+    border: 0px;
+    background-color: red;
+}
+.button-oranged-round
+{
+    border-radius: 50%;
+    padding: 6px;
+    border: 0px;
+    background-color: orangered
+}
+.button-round-deactive
+{
+    border-radius: 50%;
+    padding: 6px;
+    border: 0px;
+    background-color: red;
+}
+.font-date
+{
+    font-size:10px;
+    font-weight: bold;
+}
+
+.first-button
+{
+    border-radius: 50%;
+    padding: 10px;
+    border: 0px;
+    background-color:#42c142
+}
+.second-button
+{
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid yellow;
+   border-color:yellow;
+   background-color:white;
+margin-left: 15px
+}
+.third-button
+{
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px solid red;
+    background-color:white;
+    margin-left: 15px
+}
+.button-update
+{
+    background-color: #007bffd4;
+    color: white;
+    border: 0;
+}
+.actity-text{
+    font-size: 25px;
+    font-weight: bold;
+}
+.input-tag{
+    background-color: #e4e7ea6e;
+    border: 0;
+}
+.update-lable-font{
+    font-size: 15px;
+}
+.icone-star
+{
+    margin-top: 10px;
+    color: #0000004f;
+    font-size: 18px;
+    float: left
+}
+.icone-ecllipe
+{
+    margin-top: 10px;
+    font-size: 18px;
+    float: right
+}
+.icone-star1
+{
+    margin-top: 10px;
+    color: yellow;
+    font-size: 18px;
+    float: left
+}
+.span-text{
+    padding: 2px 2px 2px 2px;
+    background-color: #0000000f;
+    border-radius: 2px;
+    font-size: 9px;
+}
+.google-text{
+    font-weight: bold;
+    font-size: 10px;
+    color: #00000057;
+}
+.padding-whitebox{
+    height: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.center-block {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group .icon-addon .form-control {
+    border-radius: 0;
+}
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon, 
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 14px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 1.33;
+    height: 46px;
+    font-size: 18px;
+    padding: 10px 16px 10px 40px;
+}
+
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 28px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    margin-left: 0;
+    left: 11px;
+    top: 4px;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+.serch-text
+{
+    color: rgb(202, 187, 187)
+}
+.border-none
+{
+    border:none;
+}
